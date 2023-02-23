@@ -1,7 +1,5 @@
 import torch
 
-import numpy as np
-
 from flask import Flask, jsonify, request
 from transformers import BertTokenizer, BertForSequenceClassification
 
@@ -17,7 +15,6 @@ app = Flask(__name__)
 def propoint_predict():
     query = request.json['query']
     input = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
-    #input_ids = torch.tensor(input).unsqueeze(0)
 
     output = model(**input)
     logits = output[0]
