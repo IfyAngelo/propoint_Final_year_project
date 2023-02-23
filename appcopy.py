@@ -1,5 +1,5 @@
 import torch
-import requests
+
 import numpy as np
 
 from flask import Flask, jsonify, request
@@ -28,32 +28,3 @@ def propoint_predict():
 # run flask app
 if __name__ == '__main__':
     app.run(debug=True)
-
-# input_text = 'Mtn 2g lagos'
-# url = "http://localhost:8080/predict"
-
-# response = requests.get(url, params={"input_text": input_text})
-# predictions = response.json()
-# print(predictions)
-
-
-# user_input = st.text_area('Enter Choice: ')
-# button = st.button('ProPoint')
-
-# d = {
-#     0: 'Poor',
-#     1: 'Bad',
-#     2: 'Average',
-#     3: 'Good',
-#     4: 'Very Good',
-#     5: 'Excellent'
-# }
-
-# if user_input and button:
-#     text = tokenizer([user_input], padding=True, truncation=True, max_length=512, return_tensors='pt')
-#     output = model(**text)
-
-#     st.write('Logits: ', output.logits)
-#     y_pred = np.argmax(output.logits.detach().numpy(), axis=1)
-    
-#     st.write('ProPoint Predicts: ', d[y_pred[0]])
