@@ -1,0 +1,8 @@
+Invoke-RestMethod -Uri "http://127.0.0.1:5000/predict" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"query": "airtel 2g benue"}'
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/IfyAngelo/demo.git
+git push -u origin main
