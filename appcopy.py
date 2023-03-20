@@ -19,8 +19,10 @@ def propoint_predict():
     output = model(**input)
     logits = output[0]
     predicted_label = torch.argmax(logits, dim=1).tolist()[0]
+    label_map = {0: 'Poor', 1: 'Bad', 2: 'Average', 3: 'Good', 4: 'Very Good', 5: 'Excellent'}
+    predicted_label_name = label_map[predicted_label]
 
-    return jsonify({'label':predicted_label})
+    return jsonify({'label':predicted_label, 'label_name': predicted_label_name})
 
 # run flask app
 if __name__ == '__main__':
